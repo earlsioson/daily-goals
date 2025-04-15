@@ -16,6 +16,15 @@ import FastfoodIcon from '@mui/icons-material/Fastfood';
 import HotelIcon from '@mui/icons-material/Hotel';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import GroupsIcon from '@mui/icons-material/Groups';
+import SchoolIcon from '@mui/icons-material/School';
+import PeopleIcon from '@mui/icons-material/People';
+import CommuteIcon from '@mui/icons-material/Commute';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CleaningServicesIcon from '@mui/icons-material/CleaningServices';
+import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
+import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
+import PaletteIcon from '@mui/icons-material/Palette';
+import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 // Map icons to categories
@@ -25,6 +34,15 @@ const iconMap = {
   rest: <HotelIcon />,
   exercise: <FitnessCenterIcon />,
   meeting: <GroupsIcon />,
+  learning: <SchoolIcon />,
+  social: <PeopleIcon />,
+  travel: <CommuteIcon />,
+  shopping: <ShoppingCartIcon />,
+  housekeeping: <CleaningServicesIcon />,
+  entertainment: <TheaterComedyIcon />,
+  health: <HealthAndSafetyIcon />,
+  creative: <PaletteIcon />,
+  personal: <SelfImprovementIcon />,
   other: <HelpOutlineIcon />
 };
 
@@ -52,7 +70,7 @@ export default function DynamicTimeline({ items }: DynamicTimelineProps) {
           <TimelineSeparator>
             <TimelineConnector />
             <TimelineDot color={index % 2 === 0 ? "primary" : "secondary"}>
-              {iconMap[item.icon]}
+              {iconMap[item.icon as keyof typeof iconMap]}
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>

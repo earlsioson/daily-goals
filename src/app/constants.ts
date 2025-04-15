@@ -13,7 +13,22 @@ Create a daily schedule with the following requirements:
   - "what": A clear description of the task or activity
   - "when": A suggested specific time for the task (e.g., "9:00 am")
   - "why": A brief explanation of why this task is important or beneficial
-  - "icon": A category that best fits the task from these options only: 'work', 'food', 'rest', 'exercise', 'meeting', 'other'
+  - "icon": A category that best fits the task from these options only:
+    - 'work': Job-related tasks, professional responsibilities
+    - 'food': Meals, cooking, dining
+    - 'rest': Sleep, breaks, relaxation
+    - 'exercise': Physical activities, workouts, sports
+    - 'meeting': Professional or personal meetings, calls
+    - 'learning': Education, courses, reading educational material
+    - 'social': Socializing, family time, gatherings with friends
+    - 'travel': Commuting, trips, transportation
+    - 'shopping': Purchasing items, browsing stores
+    - 'housekeeping': Chores, cleaning, home maintenance
+    - 'entertainment': Leisure activities, movies, games
+    - 'health': Medical appointments, self-care, wellness
+    - 'creative': Artistic pursuits, hobbies, crafts
+    - 'personal': Self-development, reflection, planning
+    - 'other': Any activity that doesn't fit the above categories
 
 Make the schedule realistic, with appropriate timing based on the nature of the tasks mentioned. Focus primarily on accomplishing the user's stated priorities.
 
@@ -29,19 +44,19 @@ Example of correct format:
       "what": "Go to farmers market",
       "when": "10:00 am",
       "why": "Getting fresh produce for the week",
-      "icon": "other"
+      "icon": "shopping"
     },
     {
       "what": "Lunch with friends",
       "when": "1:00 pm",
       "why": "Social connection is important for wellbeing",
-      "icon": "food"
+      "icon": "social"
     },
     {
       "what": "Work on house project",
       "when": "3:30 pm",
       "why": "Making progress on personal goals",
-      "icon": "other"
+      "icon": "housekeeping"
     }
   ]
 }
