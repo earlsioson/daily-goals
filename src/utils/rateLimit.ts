@@ -28,8 +28,8 @@ export function checkRateLimit(
   } = {}
 ): RateLimitResult {
   const {
-    maxRequestsPerHour = 20, // Default max requests per hour
-    minTimeBetweenRequests = 5000, // Default 5 seconds between requests
+    maxRequestsPerHour = 100, // Default max requests per hour
+    minTimeBetweenRequests = 10000, // Default 10 seconds between requests
   } = options;
   
   const now = Date.now();
