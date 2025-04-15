@@ -2,6 +2,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Roboto } from 'next/font/google';
 import { ThemeProvider } from '@mui/material/styles';
 import GlobalStyles from '@mui/material/GlobalStyles';
+import { Analytics } from '@vercel/analytics/next';
 import theme from '../theme';
 
 const roboto = Roboto({
@@ -26,6 +27,7 @@ export default async function RootLayout({
           <GlobalStyles styles="@layer theme,base,mui,components,utilities" />
           <ThemeProvider theme={theme}>
             {children}
+            <Analytics />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

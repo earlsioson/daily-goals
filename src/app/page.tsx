@@ -305,6 +305,51 @@ export default function Page() {
               <DynamicTimeline items={timelineData.items} />
             </Box>
           )}
+          {isLoading && (
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                flexDirection: 'row',
+                my: 1,
+              }}
+            >
+              <Avatar
+                sx={{
+                  mr: 1,
+                  width: isMobile ? 32 : 40,
+                  height: isMobile ? 32 : 40,
+                }}
+              >
+                <SmartToyOutlinedIcon fontSize={isMobile ? "small" : "medium"} />
+              </Avatar>
+
+              <Paper
+                elevation={1}
+                sx={{
+                  p: isMobile ? 1.5 : 2,
+                  maxWidth: isMobile ? '75%' : '70%',
+                  borderRadius: isMobile ? '4px 12px 12px 12px' : '4px 16px 16px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <CircularProgress size={16} thickness={4} />
+                  <Typography 
+                    variant="body1" 
+                    sx={{ 
+                      fontSize: isMobile ? '0.9rem' : '1rem',
+                      fontStyle: 'italic',
+                      opacity: 0.8,
+                    }}
+                  >
+                    Thinking...
+                  </Typography>
+                </Box>
+              </Paper>
+            </Box>
+          )}
           
           <div ref={messagesEndRef} />
         </Box>
