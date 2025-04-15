@@ -1,6 +1,6 @@
 # Daily Goals App
 
-A smart application that helps you plan your day with AI assistance. Submit your top tasks, and the app will generate a structured daily schedule with timestamps, explanations, and categories.
+A smart application that helps you plan your day with AI assistance. Submit your top priorities, and the app will generate a structured daily schedule with timestamps, explanations, and categories.
 
 ## Features
 
@@ -62,9 +62,9 @@ A smart application that helps you plan your day with AI assistance. Submit your
 
 ## Usage
 
-1. Enter your top tasks or priorities for the day in the text field
+1. Enter your top priorities for the day in the text field
 2. Click the send button or press Enter
-3. The AI will generate a structured timeline with 3-5 main activities
+3. The AI will generate a structured timeline based on your priorities
 4. Each activity includes:
    - What: Task description
    - When: Scheduled time

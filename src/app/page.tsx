@@ -235,7 +235,7 @@ export default function Page() {
                 Welcome to Daily Goals
               </Typography>
               <Typography variant="body1">
-                What are the top 3 things you want to accomplish today?
+                What are the top things you want to accomplish today?
               </Typography>
             </Box>
           ) : (

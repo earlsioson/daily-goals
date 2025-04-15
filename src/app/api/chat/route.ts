@@ -121,24 +121,21 @@ export async function POST(req: Request) {
     // Get the properly parsed and typed response
     const timelineData = completion.choices[0].message.parsed;
     
-    // Validate the number of items with our application schema
+    // Validate with our application schema
     let validatedData;
     try {
       validatedData = appTimelineResponseSchema.parse(timelineData);
     } catch (validationError) {
-      console.warn('Timeline data did not meet application constraints:', validationError);
-      // We'll still use the data, but will note the issue in our response message
+      console.warn('Timeline data validation issue:', validationError);
+      // We'll still use the data, but log the issue
     }
     
-    // Determine a suitable message based on validation
+    // Determine a suitable message
     let responseMessage;
     const itemCount = timelineData?.items?.length ?? 0;
 
-    if (!validatedData && (itemCount < 3 || itemCount > 5)) {
-      responseMessage = `I've planned your day with ${itemCount} activities. Ideally, I'd recommend between 3-5 main activities for a balanced day.`;
-    } else {
-      responseMessage = `I've planned your day with ${itemCount} activities.`;
-    }
+    // Focus on priorities instead of checking item count
+    responseMessage = `I've planned your day with ${itemCount} activities focusing on your top priorities.`;
     
     // Add rate limit info to the response if the user is approaching their limit
     if (rateLimitResult.remaining <= 5) {

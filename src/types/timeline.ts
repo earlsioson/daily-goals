@@ -15,11 +15,9 @@ export const timelineResponseSchema = z.object({
     .describe("List of tasks for the day with timing, explanation, and category")
 });
 
-// For application validation, we can use this enhanced schema
+// For application validation, we've removed the strict constraints
 export const appTimelineResponseSchema = z.object({
   items: z.array(timelineItemSchema)
-    .min(3)
-    .max(5)
     .describe("List of tasks for the day with timing, explanation, and category")
 });
 

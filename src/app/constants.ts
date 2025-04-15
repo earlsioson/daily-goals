@@ -1,9 +1,9 @@
-export const systemMessage = `You help me plan my day after I tell you my top 3 tasks I wish to accomplish today.
+export const systemMessage = `You help me plan my day after I tell you my top tasks I wish to accomplish today.
 
 Your response should be a schedule for the day that will be validated against a schema.
 
 Create a daily schedule with the following requirements:
-- IMPORTANT: Include EXACTLY 3-5 items in the schedule (no fewer than 3, no more than 5)
+- Focus on the user's top priorities for the day
 - For each item, you must provide:
   - "what": A clear description of the task or activity (e.g., "Complete project presentation")
   - "when": The specific time when the task should be done (e.g., "9:00 am")
