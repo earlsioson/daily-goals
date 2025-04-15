@@ -291,17 +291,41 @@ export default function Page() {
           )}
           
           {/* Display Timeline if data is available */}
-          {timelineData && timelineData.items && timelineData.items.length > 0 && (
-            <Box 
-              sx={{ 
-                mt: 2, 
-                p: 2, 
-                bgcolor: 'background.paper', 
-                borderRadius: 2,
-                boxShadow: 1
-              }}
-            >
+{timelineData && timelineData.items && timelineData.items.length > 0 && (
+  <Box 
+    sx={{ 
+      mt: 2, 
+      p: 2, 
+      bgcolor: 'background.paper', 
+      borderRadius: 2,
+      boxShadow: 1
+    }}
+  >
               <Typography variant="h6" sx={{ mb: 2 }}>Your Daily Schedule</Typography>
+
+              {/* Display the explanation if available */}
+              {timelineData.explanation && (
+                <Paper
+                  elevation={0}
+                  sx={{
+                    p: 2,
+                    mb: 2,
+                    bgcolor: 'background.default',
+                    borderRadius: 1,
+                    borderLeft: 4,
+                    borderColor: 'primary.main',
+                  }}
+                >
+                  <Typography 
+                    variant="body2" 
+                    color="text.secondary"
+                    sx={{ fontStyle: 'italic' }}
+                  >
+                    {timelineData.explanation}
+                  </Typography>
+                </Paper>
+              )}
+
               <DynamicTimeline items={timelineData.items} />
             </Box>
           )}

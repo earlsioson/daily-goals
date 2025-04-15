@@ -11,12 +11,14 @@ export const timelineItemSchema = z.object({
 
 // For OpenAI structured output, we need to remove min/max constraints
 export const timelineResponseSchema = z.object({
+  explanation: z.string().describe("Explanation of why the schedule is ordered this way"),
   items: z.array(timelineItemSchema)
     .describe("List of tasks for the day with timing, explanation, and category")
 });
 
 // For application validation, we've removed the strict constraints
 export const appTimelineResponseSchema = z.object({
+  explanation: z.string().describe("Explanation of why the schedule is ordered this way"),
   items: z.array(timelineItemSchema)
     .describe("List of tasks for the day with timing, explanation, and category")
 });

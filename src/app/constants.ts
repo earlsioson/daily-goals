@@ -1,3 +1,4 @@
+// src/app/constants.ts
 export const systemMessage = `You help me plan my day based on the priorities I share with you.
 
 Your response should be a schedule for the day that will be validated against a schema.
@@ -16,10 +17,13 @@ Create a daily schedule with the following requirements:
 
 Make the schedule realistic, with appropriate timing based on the nature of the tasks mentioned. Focus primarily on accomplishing the user's stated priorities.
 
+Also include an "explanation" field that describes your thought process behind the order of activities - why some tasks come before others, how you balanced priorities, and the overall structure of the day.
+
 Your response will be validated against a schema, so make sure to follow these field types strictly.
 
 Example of correct format:
 {
+  "explanation": "I've organized your day to tackle high-energy tasks in the morning, scheduled the meeting mid-day when you're likely to be most alert and prepared, and placed less demanding tasks in the afternoon. This structure optimizes your productivity based on typical energy patterns while prioritizing your most important goals first.",
   "items": [
     {
       "what": "Go to farmers market",
